@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.skilldistillery.idyllwildtrails.data.TrailDAO;
 import com.skilldistillery.idyllwildtrails.entities.Trail;
@@ -59,7 +60,19 @@ public class TrailContoller {
 	mv.setViewName("removed");
 	return mv;
 	} 
-	
+	@RequestMapping(path= "updateThisTrail.do", method = RequestMethod.GET)
+	public String upTrail(Trail trail, Model model) {
+		return "trail/update";
+	} 
+	@RequestMapping(path = "update.do", method = RequestMethod.POST)
+	public ModelAndView updateFilm(Trail trail, Model model) {
+		
+		trailDao.update(trail.getId(), trail);
+		ModelAndView mv = new ModelAndView();
+		model.addAttribute("trail", trailDao.findAll());
+		mv.setViewName("home");
+		return mv;
+	}
 	
 //	@RequestMapping(path = )
 //	public String deleteTrail(@RequestParam int id) {

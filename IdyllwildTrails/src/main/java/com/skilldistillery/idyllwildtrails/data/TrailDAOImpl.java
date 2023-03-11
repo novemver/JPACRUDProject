@@ -1,6 +1,5 @@
 package com.skilldistillery.idyllwildtrails.data;
 
-import java.sql.PreparedStatement;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -42,12 +41,8 @@ public class TrailDAOImpl implements TrailDAO {
 
 	@Override
 	public Trail update(int id, Trail trail) {
-		Trail trailUpDate = em.find(Trail.class, id);
-		trailUpDate.setName(trail.getName());
-		trailUpDate.setDistance(trail.getDistance());
-		trailUpDate.setElevationGain(trail.getElevationGain());
-		trailUpDate.setElevationLoss(trail.getElevationLoss());
-		return trailUpDate;
+		em.persist(trail);
+		return trail;
 	}
 
 	@Override

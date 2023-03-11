@@ -38,6 +38,7 @@
 				</tr>
 			</tbody>
 			<h4><a href="removed.do?id=${trail.id }">Remove  ${trail.name }</a></h4>
+			<h4><a href="updateThisTrail.do?id=${trail.id }">Update  ${trail.name }</a></h4>
 		</table>
 	</div>
 

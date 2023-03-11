@@ -15,7 +15,7 @@
 
 
 
-	<h2>${trail.name }is Deleted</h2>
+	<h2>${trail.name } is Deleted</h2>
 	<h4>
 		<a href="home.do">Return to main menu</a>
 	</h4>
