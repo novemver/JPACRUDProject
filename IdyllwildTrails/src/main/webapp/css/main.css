@@ -1,3 +1,9 @@
 body {
-	background-color: #90f2ff; 
+	background-color: #90f2ff;
+}
+
+#navbg {
+	background-image: url("IMG_5594.jpg");
+	background-size: cover;
+	min-height: 100%;
 }

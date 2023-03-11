@@ -19,6 +19,8 @@
 		<input class="btn btn-primary" type="submit" value="See Trail" />
 	</form> 
 	<h4> <a href="addTrail.do">Add a Trail</a> </h4>
+
+	
 <c:choose>
 <c:when test="${! empty trail}">
 	<table class="table table-striped table-hover">

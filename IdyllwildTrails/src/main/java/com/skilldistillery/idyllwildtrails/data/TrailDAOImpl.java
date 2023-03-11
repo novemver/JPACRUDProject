@@ -1,5 +1,6 @@
 package com.skilldistillery.idyllwildtrails.data;
 
+import java.sql.PreparedStatement;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -31,14 +32,9 @@ public class TrailDAOImpl implements TrailDAO {
 
 	@Override
 	public Trail create(Trail trail) {
-		Trail newTrail = new Trail();
-		newTrail.setName(trail.getName());
-		newTrail.setDistance(trail.getDistance());
-		newTrail.setElevationGain(trail.getElevationGain());
-		newTrail.setElevationLoss(trail.getElevationLoss());
 
-		 em.persist(newTrail);
-		 return trail;
+		em.persist(trail);
+		return trail;
 	}
 // reminder 
 //	NO begin/commit transaction stuff
@@ -58,11 +54,12 @@ public class TrailDAOImpl implements TrailDAO {
 	public boolean deleteById(int id) {
 		boolean trailGone = false;
 		Trail trailD = em.find(Trail.class, id);
-		if (trailD != null) {
+		if (em.contains(trailD)) {
 			em.remove(trailD);
 			trailGone = true;
+		} else {
+		 trailGone = false;
 		}
 		return trailGone;
-
 	}
 }
