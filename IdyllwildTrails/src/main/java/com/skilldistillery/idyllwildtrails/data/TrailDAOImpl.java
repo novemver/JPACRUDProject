@@ -30,24 +30,39 @@ public class TrailDAOImpl implements TrailDAO {
 	}
 
 	@Override
-	public Trail create(Trail id) {
-		// TODO Auto-generated method stub
-		return null;
+	public Trail create(Trail trail) {
+		Trail newTrail = new Trail();
+		newTrail.setName(trail.getName());
+		newTrail.setDistance(trail.getDistance());
+		newTrail.setElevationGain(trail.getElevationGain());
+		newTrail.setElevationLoss(trail.getElevationLoss());
+
+		 em.persist(newTrail);
+		 return trail;
 	}
 // reminder 
 //	NO begin/commit transaction stuff
 //	no em.close() anywhere
-	
+
 	@Override
 	public Trail update(int id, Trail trail) {
-		// TODO Auto-generated method stub
-		return null;
+		Trail trailUpDate = em.find(Trail.class, id);
+		trailUpDate.setName(trail.getName());
+		trailUpDate.setDistance(trail.getDistance());
+		trailUpDate.setElevationGain(trail.getElevationGain());
+		trailUpDate.setElevationLoss(trail.getElevationLoss());
+		return trailUpDate;
 	}
 
 	@Override
 	public boolean deleteById(int id) {
-		// TODO Auto-generated method stub
-		return false;
-	}
+		boolean trailGone = false;
+		Trail trailD = em.find(Trail.class, id);
+		if (trailD != null) {
+			em.remove(trailD);
+			trailGone = true;
+		}
+		return trailGone;
 
+	}
 }

@@ -8,6 +8,7 @@ public class IdyllwildTrailsApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(IdyllwildTrailsApplication.class, args);
+		
 	}
 
 }
