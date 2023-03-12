@@ -1,9 +1,15 @@
 body {
 	background-color: #90f2ff;
+	font-family: "Palatino", monospace;
+	
 }
 
-#navbg {
+navbar {
 	background-image: url("IMG_5594.jpg");
 	background-size: cover;
 	min-height: 100%;
+}
+
+a:hover {
+	text-decoration: red;
 }

@@ -41,7 +41,8 @@ public class TrailDAOImpl implements TrailDAO {
 
 	@Override
 	public Trail update(int id, Trail trail) {
-		em.persist(trail);
+		em.merge(trail);
+		
 		return trail;
 	}
 

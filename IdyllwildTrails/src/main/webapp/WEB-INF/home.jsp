@@ -18,7 +18,7 @@
 		Trail ID: <input type="text" name="id" /> 
 		<input class="btn btn-primary" type="submit" value="See Trail" />
 	</form> 
-	<h4> <a href="addTrail.do">Add a Trail</a> </h4>
+	<h4> <a class="text-decoration-none" href="addTrail.do">Add a Trail</a> </h4>
 
 	
 <c:choose>
@@ -32,7 +32,7 @@
 			<c:forEach items="${trail}" var="trail">
 			<tr>
 				<td>${trail.id}</td>
-				<td> <a href="display.do?id=${trail.id }">${trail.name} </a></td>
+				<td> <a class="text-decoration-none" href="display.do?id=${trail.id }">${trail.name} </a></td>
 			</tr>
 			</c:forEach>
 		</tbody>

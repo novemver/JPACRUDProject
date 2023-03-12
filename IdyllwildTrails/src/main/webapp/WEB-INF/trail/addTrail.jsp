@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Add a Trail</title>
+<jsp:include page="../bootstrapHead.jsp" />
 </head>
 <body>
 	<jsp:include page="../nav.jsp" />

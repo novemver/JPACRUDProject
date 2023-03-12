@@ -6,12 +6,13 @@
 <head>
 <meta charset="UTF-8">
 <title>Add a Trail</title>
+<jsp:include page="../bootstrapHead.jsp" />
 </head>
 <body>
 	<jsp:include page="../nav.jsp" />
 
 	<h1>Update ${trail.name }</h1>
-	<form action="updateTrail.do" method="POST">
+	<form action="update.do" method="POST">
 	<input type="hidden" name="id" value="${trail.id }"> <br>
 		<label for="name">Name</label> 
 		<input type="text" name="name" value="${trail.name}">
