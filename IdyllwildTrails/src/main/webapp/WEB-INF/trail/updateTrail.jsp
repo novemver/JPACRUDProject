@@ -17,11 +17,23 @@
 		<label for="name">Name</label> 
 		<input type="text" name="name" value="${trail.name}">
 		<br> <label for="distance">Distance </label> 
-		<input type="text" name="distance" value="${trail.distance}"> <br>
+		<input type="number" name="distance" value="${trail.distance}"> <br>
+		<br> <label for="describe">Description </label> 
+		<input type="text" name="discription" value="${trail.description}"> <br>
 		<label for="elevation_gain">Elevation gain </label> 
-		<input type="text" name="elevationGain" value="${trail.elevationGain}"> <br> 
+		<input type="number" name="elevationGain" value="${trail.elevationGain}"> <br> 
 		<label for="elevation_loss">Elevation loss </label>
-		 <input type="text"	name="elevationLoss" value="${trail.elevationLoss}"> <br> 
+		 <input type="number"	name="elevationLoss" value="${trail.elevationLoss}"> <br> 
+		<label for="dog_friendly">Dog Friendly </label>
+		 <input type="checkbox"	name="dogFriendly" value="${trail.dogFriendly}"> <br> 
+		<label for="permit_req">Permit Required </label>
+		 <input type="checkbox"	name="needPermit" value="${trail.needPermit}"> <br> 
+		 <label for="trail_head_latitutde">Trail Head Latitude</label> 
+		<input type="number" name="headLat" value="${trail.headLat}"> <br>
+		 <label for="trail_head_longitude">Trail Head Longitude </label> 
+		<input type="number" name="headLong" value="${trail.headLong}"> <br>
+		 <label for="image_url">Trail Photo </label> 
+		<input type="text" name="pic" value="${trail.pic}"> <br>
 		 <input type="submit" value="Update Trail" />
 	</form>
 

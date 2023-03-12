@@ -4,6 +4,15 @@ body {
 	
 }
 
+#homeTable {
+	   border-collapse: collapse;
+    margin: 100px 0;
+    font-size: 2em;
+    font-family: palatino;
+    min-width: 400px;
+    box-shadow: 0 0 40px rgba(54, 52, 166, 0);
+}
+
 navbar {
 	background-image: url("IMG_5594.jpg");
 	background-size: cover;

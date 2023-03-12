@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
 import com.skilldistillery.idyllwildtrails.data.TrailDAO;
 import com.skilldistillery.idyllwildtrails.entities.Trail;
 
@@ -45,10 +44,12 @@ public class TrailContoller {
 		mv.setViewName("home");
 		return mv;
 	}
+	
 	@RequestMapping(path= "updateThisTrail.do", method = RequestMethod.GET)
 	public String upTrail(Trail trail, Model model) {
 		return "trail/updateTrail";
 	} 
+	
 	@RequestMapping(path = "update.do", method = RequestMethod.POST)
 	public ModelAndView updateTrail(Trail trail, Model model) {
 		
@@ -59,42 +60,12 @@ public class TrailContoller {
 		return mv;
 	}
 
-
 	@RequestMapping(path = "removeThisTrail.do", method = RequestMethod.GET)
 	public String removeTrail(Trail trail, Model model) {
 		trailDao.deleteById(trail.getId());
 		model.addAttribute("trail", trail);
 		return "trail/removed";
 	}
-//	@RequestMapping(path= "deleteTrail.do", method = RequestMethod.GET)
-//	public String removeForm(Trail trail, Model model) {
-//
-//		return "trail/deleteTrail";
-//	} 
 
-//	@RequestMapping(path = )
-//	public String deleteTrail(@RequestParam int id) {
-//		boolean isGone = trailDao.deleteById(id);
-//		
-//	}
-//	method = RequestMethod.POST
-//	@RequestMapping(path = "addTrail.do")
-//	public String addMenu(Trail trail, RedirectAttributes redir) {
-//		
-//		 trailDao.create(trail);
-//	
-//		 redir.addAttribute("trail", trail);
-//	
-//		return "trail/addTrail";
-//	}
-//	@RequestMapping(path = {"addTrail.do"})
-//	public ModelAndView addTrail(Trail trail, RedirectAttributes redir) {
-//		
-//		trailDao.create(trail);
-//		ModelAndView mv = new ModelAndView();
-//		redir.addFlashAttribute("trail", trail);
-//		mv.setViewName("home");
-//		return mv;
-//	}
 
 }
