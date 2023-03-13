@@ -24,8 +24,6 @@ public class TrailDAOImpl implements TrailDAO {
 		String jpql = "SELECT trail FROM Trail trail ORDER BY distance DESC";
 		return em.createQuery(jpql, Trail.class).getResultList();
 	}
-	
-	
 
 	@Override
 	public Trail create(Trail trail) {
@@ -51,6 +49,5 @@ public class TrailDAOImpl implements TrailDAO {
 		}
 		return trailGone;
 	}
-	
-	
+
 }

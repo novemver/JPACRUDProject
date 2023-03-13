@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Idyllwild Hiking Trails</title>
+<title>Trail CRUD</title>
 <jsp:include page="bootstrapHead.jsp" />
 </head>
 <body>
@@ -13,20 +13,20 @@
 
 	<div class="container-fluid">
 		<br>
-		<h1>Idyllwild Trails</h1>
+		<h1>Trail CRUD</h1>
 
-		<h3>Select a trail below to Read, Update or Remove</h3>
-
-
-		<h4>
-			<a class="text-decoration-none" href="addTrail.do">Add a Trail</a>
-		</h4>
+		<h4>Trails in and near Idyllwild, CA</h4>
+		<br>
+		<h3><a class="text-decoration-none" href="addTrail.do">Add a Trail</a>  to create a new trail</h3>
+		<h3> Select name below to update or remove trail</h3>
+		
+		<br>
 		<c:choose>
 			<c:when test="${! empty trail}">
 				<table id="homeTable" class="table table-striped table-hover">
 					<thead>
 						<th>Trail ID & Name</th>
-						<th>Length</th>
+						<th>Distance</th>
 						<th>Max Elevation</th>
 					</thead>
 					<tbody>

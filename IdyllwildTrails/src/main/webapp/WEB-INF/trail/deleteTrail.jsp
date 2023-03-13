@@ -13,14 +13,12 @@
 
 	<h1>Remove a Trail</h1>
 	<form action="goneTrail.do" method="POST">
-		<label for="id">ID</label> 
-		<input type="text" name="name">
-		<br> 
+		<label for="id">ID</label> <input type="text" name="name"> <br>
 		<input type="submit" value="Remove Trail" />
 	</form>
 
 
-	
+
 
 
 

@@ -48,13 +48,10 @@ public class Trail {
 	@Column(name = "trail_head_longitude")
 	private double headLong;
 
-	
-
 //	methods
 
 	public Trail(int id, String name, String description, double distance, int maxElevation, double elevationGain,
-			double elevationLoss, boolean dogFriendly, boolean needPermit, double headLat, double headLong)
-			 {
+			double elevationLoss, boolean dogFriendly, boolean needPermit, double headLat, double headLong) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -67,7 +64,7 @@ public class Trail {
 		this.needPermit = needPermit;
 		this.headLat = headLat;
 		this.headLong = headLong;
-		
+
 	}
 
 	public Trail() {
@@ -195,6 +192,5 @@ public class Trail {
 				&& Objects.equals(id, other.id) && Objects.equals(maxElevation, other.maxElevation)
 				&& Objects.equals(name, other.name) && needPermit == other.needPermit;
 	}
-
 
 }

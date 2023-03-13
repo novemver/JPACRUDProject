@@ -44,15 +44,15 @@ public class TrailContoller {
 		mv.setViewName("home");
 		return mv;
 	}
-	
-	@RequestMapping(path= "updateThisTrail.do", method = RequestMethod.GET)
+
+	@RequestMapping(path = "updateThisTrail.do", method = RequestMethod.GET)
 	public String upTrail(Trail trail, Model model) {
 		return "trail/updateTrail";
-	} 
-	
+	}
+
 	@RequestMapping(path = "update.do", method = RequestMethod.POST)
 	public ModelAndView updateTrail(Trail trail, Model model) {
-		
+
 		trailDao.update(trail.getId(), trail);
 		ModelAndView mv = new ModelAndView();
 		model.addAttribute("trail", trail);
@@ -66,8 +66,7 @@ public class TrailContoller {
 		model.addAttribute("trail", trail);
 		return "trail/removed";
 	}
-	
-	
+
 //	@Autowired
 //	private TrailDAO trailDao;
 //
@@ -128,6 +127,5 @@ public class TrailContoller {
 //		model.addAttribute("trail", trail);
 //		return "trail/removed";
 //	}
-
 
 }

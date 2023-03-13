@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Remove a Trail</title>
+<title>Trail Destroyed!</title>
 <jsp:include page="../bootstrapHead.jsp" />
 </head>
 <body>
@@ -13,17 +13,9 @@
 
 	<h1>Trail Removed</h1>
 
-
-
 	<h4>
 		<a href="home.do">Return to main menu</a>
 	</h4>
-
-
-
-
-
-
 
 	<jsp:include page="../bootstrapFoot.jsp" />
 </body>

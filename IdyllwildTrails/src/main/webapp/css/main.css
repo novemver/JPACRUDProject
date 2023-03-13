@@ -32,9 +32,9 @@ body {
 	width: 55%;
 	
 }
+
 #urTable {
 	border-collapse: collapse;
-	
 	margin-left: auto;
 	margin-right: auto;
 	font-size: 1.3em;
@@ -42,14 +42,18 @@ body {
 	min-width: 300px;
 	border: black 1px;
 	text-align: center;
+	padding: 33px;
 	width: 80%;
 	font: black;
 }
 
-
+ td {
+	padding: 15px;
+}
 th {
 	font-weight: bolder;
 	font-size: 2em;
+	text-align: center;
 }
 
 nav {
@@ -57,4 +61,6 @@ nav {
 	background-size: cover;
 	min-height: 100%;
 	background-size: cover;
+	font-size: 44px;
+	text-align: left;
 }
