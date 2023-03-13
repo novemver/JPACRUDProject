@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Film Details</title>
+<title>Trail Details</title>
 
 <jsp:include page="../bootstrapHead.jsp" />
 </head>
@@ -12,66 +12,62 @@
 	<jsp:include page="../nav.jsp" />
 
 	<div class="container">
-
-		<h4>
-			<a class="text-decoration-none" href="home.do">Hike to main menu</a>
-		</h4>
-		<h4>
-			<a class="text-decoration-none"
+		<br>
+		<table id="urTable">
+			<td><a class="text-decoration-none"
 				href="updateThisTrail.do?id=${trail.id }">Update ${trail.name }
-				trail</a>
-		</h4>
-		<h4>
-			<a class="text-decoration-none"
+					Trail</a></td>
+			<td><a class="text-decoration-none"
 				href="removeThisTrail.do?id=${trail.id }"> Remove ${trail.name }
-				trail</a>
-		</h4>
-
-		<table class="table table-translucent table-hover no-border">
+					Trail</a></td>
+		</table>
+		<br>
+		<table id="displayTable"
+			class="table table-translucent table-hover no-border">
 			<thead>
-				<th>${trail.name} Trail</th>
-				<th></th>
+				<th colspan="2">${trail.name} Trail</th>
+
 			</thead>
 			<tbody>
 				<tr>
+					<td>Id</td>
 					<td>${trail.id}</td>
-					<td>ID</td>
 				</tr>
 				<tr>
-					<td>${trail.distance}</td>
 					<td>Miles</td>
+					<td>${trail.distance}</td>
 				</tr>
 				<tr>
-					<td>${trail.maxElevation}</td>
 					<td>Feet</td>
+					<td>${trail.maxElevation}</td>
 				</tr>
 				<tr>
-					<td>${trail.elevationGain}</td>
 					<td>Feet elevation gain</td>
+					<td>${trail.elevationGain}</td>
 				</tr>
 				<tr>
-					<td>${trail.elevationLoss}</td>
 					<td>Feet elevation loss</td>
+					<td>${trail.elevationLoss}</td>
 				</tr>
 				<tr>
-					<td>${trail.dogFriendly}</td>
 					<td>Dog Friendly</td>
+					<td>${trail.dogFriendly}</td>
 				</tr>
 				<tr>
-					<td>${trail.needPermit}</td>
 					<td>Permit Required</td>
+					<td>${trail.needPermit}</td>
 				</tr>
 				<tr>
-					<td>${trail.headLat}</td>
 					<td>Trail Head Latitude</td>
+					<td>${trail.headLat}</td>
 				</tr>
 				<tr>
-					<td>${trail.headLong}</td>
 					<td>Trail Head Longitude</td>
+					<td>${trail.headLong}</td>
 				</tr>
 			</tbody>
 		</table>
-<img alt="${trail.description }" src="${trail.pic}">
+
 	</div>
 
 	<jsp:include page="../bootstrapFoot.jsp" />

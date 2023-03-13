@@ -25,7 +25,6 @@ class TrailTest {
 		emf = Persistence.createEntityManagerFactory("JPAIdyTrails");
 	}
 
-// before any test are run we create factory. 
 	@AfterAll
 	static void tearDownAfterClass() throws Exception {
 		emf.close();
@@ -34,7 +33,6 @@ class TrailTest {
 	@BeforeEach
 	void setUp() throws Exception {
 		em = emf.createEntityManager();
-//		grab the trail that is associated with the PK 1
 		 trail = em.find(Trail.class, 1);
 	}
 

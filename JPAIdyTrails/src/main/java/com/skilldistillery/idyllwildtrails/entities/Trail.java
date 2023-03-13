@@ -3,11 +3,14 @@ package com.skilldistillery.idyllwildtrails.entities;
 import java.util.Objects;
 
 import javax.persistence.Column;
+import javax.persistence.Convert;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.Type;
 
 @Entity
 @Table(name = "idy_trail")
@@ -15,17 +18,17 @@ public class Trail {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private Integer id;
 
+	@Column(name = "trail_name")
 	private String name;
 
-	@Column(name = "describe")
 	private String description;
 
 	private double distance;
 
 	@Column(name = "max_elevation")
-	private int maxElevation;
+	private Integer maxElevation;
 
 	@Column(name = "elevation_gain")
 	private double elevationGain;
@@ -45,14 +48,13 @@ public class Trail {
 	@Column(name = "trail_head_longitude")
 	private double headLong;
 
-	@Column(name = "image_url")
-	private String pic;
+	
 
 //	methods
 
 	public Trail(int id, String name, String description, double distance, int maxElevation, double elevationGain,
-			double elevationLoss, boolean dogFriendly, boolean needPermit, double headLat, double headLong,
-			String pic) {
+			double elevationLoss, boolean dogFriendly, boolean needPermit, double headLat, double headLong)
+			 {
 		super();
 		this.id = id;
 		this.name = name;
@@ -65,7 +67,7 @@ public class Trail {
 		this.needPermit = needPermit;
 		this.headLat = headLat;
 		this.headLong = headLong;
-		this.pic = pic;
+		
 	}
 
 	public Trail() {
@@ -160,26 +162,18 @@ public class Trail {
 		this.headLong = headLong;
 	}
 
-	public String getPic() {
-		return pic;
-	}
-
-	public void setPic(String pic) {
-		this.pic = pic;
-	}
-
 	@Override
 	public String toString() {
 		return "Trail [id=" + id + ", name=" + name + ", description=" + description + ", distance=" + distance
 				+ ", maxElevation=" + maxElevation + ", elevationGain=" + elevationGain + ", elevationLoss="
 				+ elevationLoss + ", dogFriendly=" + dogFriendly + ", needPermit=" + needPermit + ", headLat=" + headLat
-				+ ", headLong=" + headLong + ", pic=" + pic + "]";
+				+ ", headLong=" + headLong + "]";
 	}
 
 	@Override
 	public int hashCode() {
 		return Objects.hash(description, distance, dogFriendly, elevationGain, elevationLoss, headLat, headLong, id,
-				maxElevation, name, needPermit, pic);
+				maxElevation, name, needPermit);
 	}
 
 	@Override
@@ -197,9 +191,10 @@ public class Trail {
 				&& Double.doubleToLongBits(elevationGain) == Double.doubleToLongBits(other.elevationGain)
 				&& Double.doubleToLongBits(elevationLoss) == Double.doubleToLongBits(other.elevationLoss)
 				&& Double.doubleToLongBits(headLat) == Double.doubleToLongBits(other.headLat)
-				&& Double.doubleToLongBits(headLong) == Double.doubleToLongBits(other.headLong) && id == other.id
-				&& maxElevation == other.maxElevation && Objects.equals(name, other.name)
-				&& needPermit == other.needPermit && Objects.equals(pic, other.pic);
+				&& Double.doubleToLongBits(headLong) == Double.doubleToLongBits(other.headLong)
+				&& Objects.equals(id, other.id) && Objects.equals(maxElevation, other.maxElevation)
+				&& Objects.equals(name, other.name) && needPermit == other.needPermit;
 	}
+
 
 }

@@ -14,12 +14,14 @@
 	<h1>Update ${trail.name }</h1>
 	<form action="update.do" method="POST">
 	<input type="hidden" name="id" value="${trail.id }"> <br>
-		<label for="name">Name</label> 
-		<input type="text" name="name" value="${trail.name}">
+		<label for="trail_name">Name</label> 
+		<input type="text" name="trail_name" value="${trail.name}">
 		<br> <label for="distance">Distance </label> 
 		<input type="number" name="distance" value="${trail.distance}"> <br>
-		<br> <label for="describe">Description </label> 
-		<input type="text" name="discription" value="${trail.description}"> <br>
+		<label for="description">Description </label> 
+		<input type="text" name="description" value="${trail.description}"> <br>
+		<label for="max_elevation">Max Elevation </label> 
+		<input type="number" name="maxElevation"><br>
 		<label for="elevation_gain">Elevation gain </label> 
 		<input type="number" name="elevationGain" value="${trail.elevationGain}"> <br> 
 		<label for="elevation_loss">Elevation loss </label>
@@ -32,8 +34,6 @@
 		<input type="number" name="headLat" value="${trail.headLat}"> <br>
 		 <label for="trail_head_longitude">Trail Head Longitude </label> 
 		<input type="number" name="headLong" value="${trail.headLong}"> <br>
-		 <label for="image_url">Trail Photo </label> 
-		<input type="text" name="pic" value="${trail.pic}"> <br>
 		 <input type="submit" value="Update Trail" />
 	</form>
 
